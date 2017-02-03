@@ -18,12 +18,12 @@ class Books_ISBN < Minitest::Test
 	end
 
 	def test_num_is_false_dash
-		book_num_10 = '402 378 91 3'
-		assert_equal('402378913', remove_spaces(book_num_10))
+		book_num_10 = '4-023-78913-2'
+		assert_equal('4023789132', remove_dashes(book_num_10))
 	end
 
 	def test_removing_spaces
-		book_num_10 = '123 456 9845'
+		book_num_10 = '1 234 56984 5'
 		assert_equal('1234569845', remove_spaces(book_num_10))
 	end
 
@@ -32,8 +32,13 @@ class Books_ISBN < Minitest::Test
 		assert_equal(false, check_for_letters(book_num_10))
 	end
 
-	def test_true_if_X_at_end
-		book_num_10 = 'x43798025x'
+	def test_true_if_x_at_end
+		book_num_10 = '243798025x'
 		assert_equal(true, check_for_x(book_num_10))
+	end
+
+	def test_for_symbols
+		book_num_10 = '1238456@90'
+		assert_equal(true, check_for_symbols(book_num_10))
 	end
 end

@@ -29,3 +29,18 @@ def check_for_x(num)
 		false
 	end
 end
+
+def remove_dashes(isbn_number)
+	isbn_number.gsub('-', '')
+	# isbn_number.delete('-')
+end
+
+
+def check_for_symbols(symbols)
+
+	if symbols[-1].match(/[0-9 !, @, #, $, %, ^, &, *]/)
+		true
+	else
+		false
+	end
+end
