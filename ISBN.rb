@@ -44,3 +44,14 @@ def check_for_symbols(symbols)
 		false
 	end
 end
+
+def check_for_space_or_dash(space_or_dash)
+
+	# if ' '
+		true
+	if '-'
+		true
+	else
+		false
+	end
+end

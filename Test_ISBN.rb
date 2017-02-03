@@ -41,4 +41,10 @@ class Books_ISBN < Minitest::Test
 		book_num_10 = '1238456@90'
 		assert_equal(true, check_for_symbols(book_num_10))
 	end
+
+	def test_false_if_space_or_dash
+		# book_num_10 = ' ' 
+		book_num_10 = '-'
+		assert_equal(true, check_for_space_or_dash(book_num_10))
+	end
 end
