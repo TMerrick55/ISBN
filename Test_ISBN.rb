@@ -42,7 +42,7 @@ class Books_ISBN < Minitest::Test
 		assert_equal(true, check_for_symbols(book_num_10))
 	end
 
-	def test_false_if_space_or_dash
+	def test_false_if_spaces_or_dashes
 		# book_num_10 = ' ' 
 		book_num_10 = '-'
 		assert_equal(true, check_for_space_or_dash(book_num_10))
