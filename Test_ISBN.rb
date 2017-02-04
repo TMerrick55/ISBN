@@ -3,7 +3,7 @@ require_relative 'ISBN.rb'
 
 class Books_ISBN < Minitest::Test
 
-	def test_1_equal_1
+	def test_1_equals_1
 		assert_equal(1,1)
 	end
 
