@@ -34,3 +34,23 @@ def check_for_x(num)
 		false
 	end
 end
+
+def check_for_symbols(symbols)
+	
+	if symbols[-1].match(/[0-9 !, @, #, $, %, ^, &, *]/)
+		true
+	else
+		false
+	end
+end
+
+def check_for_space_or_dash(space_or_dash)
+	
+	# if ' '
+		# true
+	if '-'
+		true
+	else
+		false
+	end
+end
