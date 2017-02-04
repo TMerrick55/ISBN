@@ -31,4 +31,9 @@ class Books_ISBN < Minitest::Test
 		book_num_13 = '2019e56246840'
 		assert_equal(false, check_for_letters(book_num_13))
 	end
+
+	def test_true_if_x_at_end
+		book_num_13 = '294086723104x'
+		assert_equal(true, check_for_x(book_num_13))
+	end
 end

@@ -25,3 +25,12 @@ def check_for_letters(letters)
 		true
 	end
 end
+
+def check_for_x(num)
+
+	if num[-1].match(/[0-9 x X]/)
+		true
+	else
+		false
+	end
+end
