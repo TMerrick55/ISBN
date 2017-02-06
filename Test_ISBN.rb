@@ -75,4 +75,14 @@ class TestMultiply < Minitest::Test
 		results = compare_check_digit('877195869x')
 		assert_equal(true, results)
 	end
+
+	def test_remainder_results_equal_to_last_digit
+		results = compare_check_digit('877195869X')
+		assert_equal(true, results)
+	end
+
+	def test_remainder_false
+		results = compare_check_digit('244590789')
+		assert_equal(false, results)
+	end
 end
