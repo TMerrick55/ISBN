@@ -60,4 +60,9 @@ class TestMultiply < Minitest::Test
 		results = sum([1, 2, 3, 4, 5, 6, 7, 8, 9])
 		assert_equal(45, results)
 	end
+
+	def test_return_whats_left
+	results = remainder(11)
+	assert_equal(0, results)
+	end
 end
