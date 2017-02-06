@@ -31,7 +31,7 @@ def compare_check_digit(isbn_num)
 
 	if isbn_mod == 10 && isbn_num[-1].match(/[xX]/)
 		true
-	elsif isbn_mod != 10 && isbn_num[-1] == isbn_mod
+	elsif isbn_num[-1].to_i == isbn_mod
 		true
 	else
 		false
