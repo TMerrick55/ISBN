@@ -65,4 +65,9 @@ class TestMultiply < Minitest::Test
 	results = remainder(11)
 	assert_equal(0, results)
 	end
+
+	def test_modulus_11
+		results = remainder(232)
+		assert_equal(1, results)
+	end
 end
