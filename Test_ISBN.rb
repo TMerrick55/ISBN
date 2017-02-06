@@ -85,4 +85,9 @@ class TestMultiply < Minitest::Test
 		results = compare_check_digit('244590789')
 		assert_equal(false, results)
 	end
+
+	def test_invalid_character
+		results = compare_check_digit('123&456987')
+		assert_equal(false, results)
+	end
 end
