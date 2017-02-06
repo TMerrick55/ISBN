@@ -25,9 +25,9 @@ end
 
 def compare_check_digit(isbn_num)
 	
-	isbn_value = multiply(isbn_num)
-	isbn_total = sum(isbn_value)
-	isbn_mod = remainder(isbn_total)
+	isbn_value = multiply(isbn_num) # function equals variable(backwards)
+	isbn_total = sum(isbn_value)	# function equals variable('')
+	isbn_mod = remainder(isbn_total) # function equals variable('')
 
 	if isbn_mod == 10 && isbn_num[-1].match(/[xX]/)
 		true
