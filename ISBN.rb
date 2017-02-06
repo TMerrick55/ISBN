@@ -1,3 +1,17 @@
+def valid_isbn?(isbn_num)
+	string_no_dash_or_space = remove_spaces_and_dashes(isbn_num)
+		if valid_ISBN_length?(string_no_dash_or_space)
+			true
+		else
+			false
+		end
+end
+	# check_for_letters(isbn_remove_spaces_dashes)
+	# check_for_x(check_for_letters)
+	# check_for_symbols()
+	# compare_remain_to_check(isbn_num)
+
+
 def valid_ISBN_length?(book_num_10)
 
 	if book_num_10.length == 10

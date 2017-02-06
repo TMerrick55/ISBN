@@ -95,4 +95,9 @@ class TestMultiply < Minitest::Test
 		results = compare_check_digit('755#246x')
 		assert_equal(false, results)
 	end
+
+	def test_valid_isbn_main_function
+		results = valid_isbn?('0132971291')
+		assert_equal(true, results)
+	end
 end
