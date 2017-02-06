@@ -14,7 +14,7 @@ end
 
 def check_for_letters(letters)
 	
-	if letters.match(/[a-zA-Z]/)
+	if letters.chop.match(/[a-zA-Z]/)
 		false
 	else
 		true
@@ -37,9 +37,10 @@ end
 
 def check_for_symbols(symbols)
 
-	if symbols =~ /\D/
+	if symbols.chop =~ /\D/
 		true
 	else
 		false
 	end
 end
+
