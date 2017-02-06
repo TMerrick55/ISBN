@@ -19,7 +19,7 @@ end
 
 def check_for_letters(letters)
 
-	if !!letters.match(/[a-z, A-Z]/)
+	if !!letters.match(/[a-zA-Z]/)
 		false
 	else
 		true
@@ -28,7 +28,7 @@ end
 
 def check_for_x(num)
 
-	if num[-1].match(/[0-9 x X]/)
+	if num[-1].match(/[0-9xX]/)
 		true
 	else
 		false
