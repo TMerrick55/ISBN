@@ -7,19 +7,14 @@ def valid_ISBN_length?(book_num_13)
 	end
 end
 
-def remove_dashes(isbn_number)
-	isbn_number.gsub('-', '')
-	# isbn_number.delete('-')
-end
-
-def remove_spaces(isbn_number)
+def remove_spaces_and_dashes(isbn_number)
 	# isbn_number.gsub(' ', '')
-	isbn_number.delete(' ')
+	isbn_number.delete(' ' '-')
 end
 
 def check_for_letters(letters)
 
-	if !!letters.match(/[a-zA-Z]/)
+	if letters.chop.match(/[a-zA-Z]/)
 		false
 	else
 		true
@@ -28,27 +23,16 @@ end
 
 def check_for_x(num)
 
-	if num[-1].match(/[0-9xX]/)
-		true
-	else
+	if num[-1].match(/[0-12xX]/)
 		false
+	else
+		true
 	end
 end
 
 def check_for_symbols(symbols)
 	
-	if symbols[-1].match(/[0-9 !, @, #, $, %, ^, &, *]/)
-		true
-	else
-		false
-	end
-end
-
-def check_for_space_or_dash(space_or_dash)
-	
-	# if ' '
-		# true
-	if '-'
+	if symbols.chop =~ /\D/
 		true
 	else
 		false
