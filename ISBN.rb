@@ -87,6 +87,12 @@ def valid_isbn?(isbn_string)
 			# check_for_symbols(isbn_string_no_spaces_no_dashes)
 			check_for_x(isbn_string_no_spaces_no_dashes)
 			compare_check_digit(isbn_string_no_spaces_no_dashes)
+		
+		elsif
+			# check_for_symbols(isbn_string_no_spaces_no_dashes) && 
+			isbn_string_no_spaces_no_dashes.length == 13
+			check_for_letters(isbn_string_no_spaces_no_dashes)
+			valid13isbn?(isbn_string_no_spaces_no_dashes)
 		else
 			false
 		end
