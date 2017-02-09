@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require_relative 'ISBN.rb' 
-require_relative '2_ISBN_10_multiply_&_add.rb'
+require_relative '2_ISBN_10_multiply_and_add.rb'
 
 class Books_ISBN < Minitest::Test
 
@@ -40,12 +40,12 @@ class Books_ISBN < Minitest::Test
 
 	def test_for_symbols
 		book_num_10 = '1238456&90'
-		assert_equal(true, check_for_symbols(book_num_10))
+		assert_equal(false, check_for_symbols(book_num_10))
 	end
 
 	def test_for_symbols_false
 		book_num_10 = '1234098765'
-		assert_equal(false, check_for_symbols(book_num_10))
+		assert_equal(true, check_for_symbols(book_num_10))
 	end
 end
 
@@ -99,5 +99,47 @@ class TestMultiply < Minitest::Test
 	def test_valid_isbn_main_function
 		results = valid_isbn?('0132971291')
 		assert_equal(true, results)
+	end
+end
+
+class Testisbn13 < Minitest::Test
+	def test_valid_13_isbn
+		isbn13 = '9780470059029'
+		assert_equal(true, valid13isbn?(isbn13))
+	end
+
+	def test_isbn13_invalid
+		isbn13 = '9720592241023'
+		assert_equal(false, valid13isbn?(isbn13))
+	end
+
+	def test_valid_isbn_10_digit_in_main_function
+		isbn_num = '0471958697'
+		assert_equal(true, valid_isbn?(isbn_num))
+	end
+
+	def test_invalid_isbn_10_returns_false_main_function
+		isbn_num = '047-958697'
+		assert_equal(false, valid_isbn?(isbn_num))
+	end
+
+	def test_invalid_isbn_10_symbols_main_function
+		isbn_num = '047&958697'
+		assert_equal(false, valid_isbn?(isbn_num))
+	end
+
+	def test_valid_isbn_10_x_main_function
+		isbn_num = '877195869x'
+		assert_equal(true, valid_isbn?(isbn_num))
+	end
+
+	def test_valid_isbn_10_X_main_function_2
+		isbn_num = '877 19-58 69X'
+		assert_equal(true, valid_isbn?(isbn_num))
+	end
+
+	def test_valid_isbn_10_illegal_character_main_function
+		isbn_num = '0294566@82'
+		assert_equal(false, valid_isbn?(isbn_num))
 	end
 end
