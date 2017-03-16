@@ -78,10 +78,10 @@ def check_for_symbols(symbols) # change later
 	end
 end
 
-def valid_isbn?(isbn_string)
+def valid_isbn?(isbn_num)
 	# if valid isbn and replace '0' with illegal character, the character comes back as '0' (false positive)
 	# takes in string, returns boolean
-	isbn_string_no_spaces_no_dashes = remove_spaces_and_dashes(isbn_string)
+	isbn_string_no_spaces_no_dashes = remove_spaces_and_dashes(isbn_num)
 		if check_for_symbols(isbn_string_no_spaces_no_dashes) && isbn_string_no_spaces_no_dashes.length == 10
 			check_for_letters(isbn_string_no_spaces_no_dashes)
 			# check_for_symbols(isbn_string_no_spaces_no_dashes)
