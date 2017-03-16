@@ -8,7 +8,7 @@ get '/' do
 	# 'Guess not...'
 	# '... Oh well...'
 
-erb :ISBN_input, :locals => {:isbn_num => '', :results => ''} # '' = empty
+erb :ISBN_input, :locals => {:isbn_num => '', :results => ''}
 end
 
 post '/ISBN_num' do
